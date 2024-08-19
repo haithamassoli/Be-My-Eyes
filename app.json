@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "color-detection",
+    "name": "Be My Eyes",
     "slug": "color-detection",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -19,18 +19,35 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
-    },
-    "web": {
-      "bundler": "metro",
-      "output": "static",
-      "favicon": "./assets/images/favicon.png"
+      },
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.RECORD_AUDIO"
+      ],
+      "package": "com.haithamassoli.colordetection"
     },
     "plugins": [
-      "expo-router"
+      "expo-router",
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Allow color detection to access your camera",
+          "microphonePermission": "Allow color detection to access your microphone",
+          "recordAudioAndroid": true
+        }
+      ]
     ],
     "experiments": {
-      "typedRoutes": true
+      "typedRoutes": true,
+      "tsconfigPaths": true
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "04fe297c-4ef3-4b87-ac71-2f1833885d73"
+      }
     }
   }
 }
